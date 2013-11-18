@@ -16,6 +16,9 @@
       > 工作区的隐藏目录.git  
       > 其中最重要的是暂存区stage，第一个分支master和指向master的指针HEAD  
       > 不在暂存区中的文档是不能被commit到分支的  
+      
+  3. 工作区、暂存区的关系
+  
 
 ##配置Git
   1. git config --global color.ui true  
@@ -25,7 +28,7 @@
         git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"  
 
 ##创建版本库
-  1. 初始化Git仓库：
+  1. 初始化Git仓库
   
         mkdir LearnGit  
         cd /F/LearnGit  
@@ -88,18 +91,18 @@
   1. 登陆GitHub，点击Create a new repo，创建一个新的仓库
   2. Repository name填入仓库名称，其他保持默认设置，创建Git仓库
   3. 将本地仓库推送到GitHub仓库：
-      - git remote add origin git@github.com:zhayh/LearnGit.git
+      - `git remote add origin git@github.com:zhayh/LearnGit.git`
       - git push -u origin master,-u参数：将本地master分支内容推送到远程新的master分支，并关联本地的master分支和远程的master分支，在以后的推送或拉取时就可以简化命令
       - 本地提交后的推送命令：git push origin master
 
 ##从远程库克隆
   1. git clone `git@github.com:zhayh/python.git`  
-  2. 也可以用 `  https://github.com/zhayh/python.git  ` 克隆  
+  2. 也可以用 `https://github.com/zhayh/python.git` 克隆  
   3. Git支持多种协议，默认的git：//使用ssh，速度最快  
 
 ##创建与合并分支
   1. 创建并切换分支：git checkout -b dev 
-  2. 查看分支：git branch dev, 当前分支用*标识
+  2. 查看分支：git branch, 当前分支用*标识
   3. 创建分支：git branch name
   4. 切换分支：git checkout master
   5. 合并分支到当前分支：git merge dev
@@ -184,7 +187,7 @@
 
 ##忽略特殊文件
   1. 在Git工作去的根目录创建.gitignore文件，添加要忽略的文件名  
-  2. 参考：https://github.com/github/gitignore  
+  2. 参考：[Git官方ignore模版](https://github.com/github/gitignore)  
   3. .gitignore文件本身要放到版本库中，并对其进行版本管理  
   3. 忽略文件的原则：  
       1）忽略操作系统自动生成的文件，如缩略图等  
@@ -192,6 +195,6 @@
       3）忽略带有敏感信息的配置文件，如：存放口令的配置文件  
 
 ##参考资料
-  * Git官方网站：http://git-scm.com  
-  * Git在线练习：http://try.github.io/levels/1/challenges/1  
-  * Git Cheat Sheet：http://www.git-tower.com/blog/assets/2013-05-22-git-cheat-sheet/cheat-sheet-large01.png
+  * [Git官方网站](http://git-scm.com>)  
+  * [Git在线练习](http://try.github.io/levels/1/challenges/1)  
+  * [Git Cheat Sheet](http://www.git-tower.com/blog/assets/2013-05-22-git-cheat-sheet/cheat-sheet-large01.png)
