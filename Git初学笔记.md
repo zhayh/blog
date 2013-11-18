@@ -5,20 +5,18 @@
   1. 在Linux上安装  
       Ubuntu：sudo apt-get install git  
   2. 在Windows上安装  
-  
-    > 安装[msysgit](http://msysgit.github.io)，按照默认选项安装即可  
-    > 安装完成之后运行Git Bash，打开命令行窗口  
+    - 安装[msysgit](http://msysgit.github.io)，按照默认选项安装即可  
+    - 安装完成之后运行Git Bash，打开命令行窗口  
 
 ##基本概念
   1. 工作区：电脑中的目录  
   2. 版本库：  
-  
-      > 工作区的隐藏目录.git  
-      > 其中最重要的是暂存区stage，第一个分支master和指向master的指针HEAD  
-      > 不在暂存区中的文档是不能被commit到分支的  
-      
-  3. 工作区、暂存区的关系
-  
+      - 工作区的隐藏目录.git  
+      - 其中最重要的是暂存区stage，第一个分支master和指向master的指针HEAD  
+      - 不在暂存区中的文档是不能被commit到分支的    
+  3. 工作区、暂存区的关系 
+   
+  	 ![](https://zhayh.github.io/images/git/stage.png)
 
 ##配置Git
   1. git config --global color.ui true  
@@ -41,10 +39,10 @@
 
     说明：
 
-      > 创建的文件一定放在Git仓库的目录或子目录下  
-      > add将文件添加到暂存区  
-      > commit将暂存区的所有内容提交到当前分支  
-      > -m后面输入本次提交的说明  
+   	- 创建的文件一定放在Git仓库的目录或子目录下  
+	- add将文件添加到暂存区  
+	- commit将暂存区的所有内容提交到当前分支  
+	- -m后面输入本次提交的说明  
 
 ##查看、修改和提交 
   1. 查看Git工作区的状态：git status  
@@ -91,8 +89,8 @@
   1. 登陆GitHub，点击Create a new repo，创建一个新的仓库
   2. Repository name填入仓库名称，其他保持默认设置，创建Git仓库
   3. 将本地仓库推送到GitHub仓库：
-      - `git remote add origin git@github.com:zhayh/LearnGit.git`
-      - git push -u origin master,-u参数：将本地master分支内容推送到远程新的master分支，并关联本地的master分支和远程的master分支，在以后的推送或拉取时就可以简化命令
+      - 关联远程库：`git remote add origin git@github.com:path/repo-name.git`
+      - 第一次推送：git push -u origin master，-u参数：将本地master分支内容推送到远程新的master分支，并关联本地的master分支和远程的master分支，在以后的推送或拉取时就可以简化命令
       - 本地提交后的推送命令：git push origin master
 
 ##从远程库克隆
@@ -117,7 +115,6 @@
   2. 使用"no-ff"方式merge可以强制禁用"Fast forward"模式   
   
         git merge --no-ff -m "merge with no-ff" dev
-
   3. 分支策略  
       master分支应非常稳定，仅用于发布新版本，工作都在dev分支上进行  
       每个成员都有自己的分支，经常往dev合并即可  
@@ -129,9 +126,9 @@
       * 恢复现场：git stash apply
       * 删除stash内容：git stash drop
       * 恢复制定的stash：git stash apply stash@{0}
-  5. feature分支
-      1. 添加一个新功能，可以新建一个feature分支进行，完成后合并，最后删除feature分支
-      2. 强行删除feature分支开发的新功能：git branch -D feature
+  5. feature分支  
+      1) 添加一个新功能，可以新建一个feature分支进行，完成后合并，最后删除feature分支  
+      2) 强行删除feature分支开发的新功能：git branch -D feature
   6. 多人协作  
       查看远程库：git remote / git remote -v
   7. 推送分支  
@@ -142,11 +139,10 @@
         * dev分支是开发分支，也需要与远程同步  
         * bug分支只用于在本地修复bug，就没必要推送到远程  
         * feature分支是否推到远程，取决于是否合作在上面开发  
-        
-  8. 抓取分支
-      1. 从远程库clone，一般只能看到本地的master分支
-      2. 创建远程origin的dev分支到本地：git checkout -b dev origin/dev
-      3. 推送冲突的解决：
+  8. 抓取分支  
+      1) 从远程库clone，一般只能看到本地的master分支  
+      2) 创建远程origin的dev分支到本地：git checkout -b dev origin/dev  
+      3) 推送冲突的解决：
       
           * 使用git pull将最新的提交从origin/dev抓取下来，在本地合并，解决冲突，再推送
           * git pull失败的原因：需指定本地dev分支与远程origin/dev分支的链接
@@ -168,9 +164,8 @@
   6. 查看所有标签：git tag
   7. 查看标签信息：git show v0.9
   8. 说明：  
-
-      > 默认标签是打在最新提交的commit上，标签按字母排序  
-      > 查看commit id：git log --pretty=oneline --abbrev-commit  
+      - 默认标签是打在最新提交的commit上，标签按字母排序  
+      - 查看commit id：git log --pretty=oneline --abbrev-commit  
 
 ##操作标签
   1. 删除标签：git tag -d v1.0  
