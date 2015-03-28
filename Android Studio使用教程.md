@@ -18,7 +18,7 @@
 
 可以下载开源库，进入模块的build.gradle 文件，添加如下图的内容即可：
 
- 	![](https://zhayh.github.io/images/git/importlibs.png)
+![import libs](http://i.imgur.com/QNotIIz.png)
 
 添加的内容一般会在开源库的readme.md中有说明。
 
@@ -42,11 +42,12 @@
 > * Butterknife Zelezny
 > * Parcelable Code Generator
 > * Prettify  
+> * ADB Idea  
 
 ###Butterknife Zelezny  
 - 功能：专注于Android系统的View注入框架
 - 下载：[Android ButterKnife Zelezny](https://plugins.jetbrains.com/plugin/7369?pr=androidstudio)   
-- 安装：Preferences -> Plugins -> Browse repositories，查找Butterknife Zelezny，或下载后从磁盘安装    
+- 安装：Setting -> Preferences -> Plugins -> Browse repositories，查找Butterknife Zelezny，或下载后从磁盘安装    
 - 使用：  
 	1. 确保最新的Bufferfknife jar文件导入classpath  
 	2. 右键选择代码中的layout引用，然后选择`Generate`或直接按下`alt+Insert`，再选择`Generate ButterKnife Injections`
@@ -148,18 +149,45 @@
 
 
 ###Parcelable Code Generator
-
 - 功能：Parcelable接口是Android特有的序列化方法，效率比Serializable接口高，还可以用在IPC中，但是实现稍微复杂一些。该插件可以帮助实现Parcelable接口所需的字段和方法的代码
 - 下载：[Parcelable Code Generator](https://plugins.jetbrains.com/plugin/7332?pr=androidstudio)   
-- 安装：Preferences -> Plugins -> Browse repositories，查找Parcelable Code Generator，或下载后从磁盘安装  
+- 安装：Setting -> Preferences -> Plugins -> Browse repositories，查找Parcelable Code Generator，或下载后从磁盘安装  
 - 使用：  
 	1. 新建一个实体类，定义好属性
 	2. 右键选择`Generator`或直接按下`Alt+Insert`，选择`Parcelable`，选择需要的属性，点击`OK`，即可生成相应的代码。
+	3. 截图  
+	![Parcelable Code Generator](http://i.imgur.com/wubt1wW.png)
 
 ###Prettify
-
-- 功能：帮助生成布局组件
+- 功能：从布局文件中生成对View的声明（不使用注解）
 - 下载：[Android Studio Prettify](https://plugins.jetbrains.com/plugin/7405?pr=androidstudio)   
-- 安装：Preferences -> Plugins -> Browse repositories，查找Prettify，或下载后从磁盘安装  
-- 使用：  
-	
+- 安装：Setting -> Preferences -> Plugins -> Browse repositories，查找Prettify，或下载后从磁盘安装  
+- 特性：
+	1. inflaterhe activity的setContentView的view变量的生成
+	2. 在上下文菜单中加入`Extract String resource`快捷键
+	3. view的cast检查的注解
+	4. views的field和method的变量生成
+	5. 内部类的相关layout的文件
+	6. xml文件中的layout的id的查找
+- 使用截图  
+
+	<img alt="Screenshot #14418" onclick="showImage('http:\/\/plugins.jetbrains.com\/files\/7405\/screenshot_14418.png')" src="http://plugins.jetbrains.com/files/7405/screenshot_14418.png" border="0">
+
+###ADB Idea
+- 功能：此插件可以轻松完成以下操作，而不用手动输入ADB命令
+	- 卸载应用
+	- 杀死应用进程
+	- 启动应用
+	- 重启应用
+	- 清除应用数据
+	- 清除应用数据并重启应用  
+- 下载：[ADB Idea](http://plugins.jetbrains.com/plugin/7380?pr=idea)
+- 安装：Setting -> Preferences -> Plugins -> Browse repositories，查找ADB Idea，或下载后从磁盘安装  
+- 使用：在Tools -> Android -> ADB Idea中选择相应的菜单项进行操作。
+![ADB Idea](http://i.imgur.com/iMd4DTU.png)
+
+###
+
+##Gradle使用  
+
+http://shanksleo.gitbooks.io/cookbook/content/gradle/gradle.html
